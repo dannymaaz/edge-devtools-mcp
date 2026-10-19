@@ -1,0 +1,59 @@
+{
+  "name": "edge-devtools-mcp",
+  "version": "1.0.0",
+  "description": "Production-grade Model Context Protocol (MCP) server for Microsoft Edge browser automation and Edge DevTools Protocol (CDP) control for AI agents.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "microsoft-edge",
+    "edge-devtools",
+    "cdp",
+    "chrome-devtools-protocol",
+    "ai-agents",
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "browser-automation",
+    "playwright",
+    "devtools"
+  ],
+  "author": "Danny Maaz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannymaaz/edge-devtools-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dannymaaz/edge-devtools-mcp/issues"
+  },
+  "homepage": "https://github.com/dannymaaz/edge-devtools-mcp#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "edge-devtools-mcp": "./dist/bin/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/bin/cli.js",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "playwright-core": "^1.51.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
