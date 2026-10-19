@@ -200,8 +200,11 @@ export function registerExtractionTools(edgeManager: EdgeManager) {
         const page = edgeManager.getTabManager().getActivePage();
 
         const result = await page.evaluate((expr: string) => {
-          // eslint-disable-next-line no-eval
-          return (0, eval)(expr);
+          try {
+            return (0, eval)(expr);
+          } catch {
+            return new Function(expr)();
+          }
         }, args.expression);
 
         return {
